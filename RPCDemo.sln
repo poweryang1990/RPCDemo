@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{E593A884-BBA7-497B-8B40-A283B83BD140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IService", "IService\IService.csproj", "{93553EBE-7D7A-4334-B9DB-3529EE2C79CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{D6F5B3D4-76B1-4106-98DA-9E3D0B768598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPCClient", "RPCClient\RPCClient.csproj", "{1110BC38-A845-4210-8542-90219D196088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPCServer.Hprose", "RPCServer.Hprose\RPCServer.Hprose.csproj", "{DF7D05EA-D520-42DD-A3C6-B4461672BC2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPC.Common", "RPC.Common\RPC.Common.csproj", "{63DD53D7-924A-48AB-9439-628B5BB147B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPCServer.Halibut", "RPCServer.Halibut\RPCServer.Halibut.csproj", "{E04DD31D-F2EB-4474-845D-6DC6E358F107}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E593A884-BBA7-497B-8B40-A283B83BD140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E593A884-BBA7-497B-8B40-A283B83BD140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E593A884-BBA7-497B-8B40-A283B83BD140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E593A884-BBA7-497B-8B40-A283B83BD140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93553EBE-7D7A-4334-B9DB-3529EE2C79CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93553EBE-7D7A-4334-B9DB-3529EE2C79CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93553EBE-7D7A-4334-B9DB-3529EE2C79CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93553EBE-7D7A-4334-B9DB-3529EE2C79CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F5B3D4-76B1-4106-98DA-9E3D0B768598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F5B3D4-76B1-4106-98DA-9E3D0B768598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F5B3D4-76B1-4106-98DA-9E3D0B768598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F5B3D4-76B1-4106-98DA-9E3D0B768598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1110BC38-A845-4210-8542-90219D196088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1110BC38-A845-4210-8542-90219D196088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1110BC38-A845-4210-8542-90219D196088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1110BC38-A845-4210-8542-90219D196088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF7D05EA-D520-42DD-A3C6-B4461672BC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF7D05EA-D520-42DD-A3C6-B4461672BC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF7D05EA-D520-42DD-A3C6-B4461672BC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF7D05EA-D520-42DD-A3C6-B4461672BC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DD53D7-924A-48AB-9439-628B5BB147B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DD53D7-924A-48AB-9439-628B5BB147B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DD53D7-924A-48AB-9439-628B5BB147B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DD53D7-924A-48AB-9439-628B5BB147B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E04DD31D-F2EB-4474-845D-6DC6E358F107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04DD31D-F2EB-4474-845D-6DC6E358F107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04DD31D-F2EB-4474-845D-6DC6E358F107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04DD31D-F2EB-4474-845D-6DC6E358F107}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {590F3341-1599-493C-8479-34A726F2F1FA}
+	EndGlobalSection
+EndGlobal
