@@ -1,0 +1,1 @@
+.\traefik.exe -c traefik.toml

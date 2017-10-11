@@ -1,0 +1,10 @@
+{
+    "datacenter":"uoko-internal",
+    "bootstrap":true,
+    "server": true,
+    "data_dir": "Data",
+    "log_level": "INFO",
+	"ui":true,
+    "node_name":"Consul_Node_01",
+    "client_addr" : "0.0.0.0"
+}
