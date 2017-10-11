@@ -25,7 +25,20 @@ namespace RPC.Common.Registry
         {
             using (var consul = BuildConsul())
             {
-                var result = consul.Agent.ServiceRegister(new AgentServiceRegistration() {ID= GetServiceId(rpcService), Name = rpcService.Name, Address = rpcService.Host, Port = rpcService.Port }).ConfigureAwait(false).GetAwaiter().GetResult();
+                var serviceRegistration = new AgentServiceRegistration()
+                {
+                    ID = GetServiceId(rpcService),
+                    Name = rpcService.Name,
+                    Address = rpcService.Host,
+                    Port = rpcService.Port,
+                    Check= new AgentServiceCheck
+                    {
+                         HTTP=$"http://{rpcService.Host}:{rpcService.Port}",
+                         Interval=TimeSpan.FromSeconds(5),
+                         Timeout= TimeSpan.FromSeconds(2)
+                    }
+                };
+                var result = consul.Agent.ServiceRegister(serviceRegistration).ConfigureAwait(false).GetAwaiter().GetResult();
             };
   
         }

@@ -41,7 +41,7 @@ namespace RPCClient
             using (ThreadScopedLifestyle.BeginScope(container))
             {
                 var consulDiscoveryService = new ConsulDiscoveryService(new ServiceRegistryAddress { RegistryHost = "127.0.0.1", RegistryPort = 8500 });
-                var urls = consulDiscoveryService.GetRpcService("房源服务");
+                var urls = consulDiscoveryService.GetRpcService("UserService");
                 if (urls != null && urls.Any())
                 {
                     string url = $"http://{urls[0].Host}:{urls[0].Port}/";

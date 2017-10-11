@@ -37,7 +37,7 @@ namespace RPCServer.Hprose
             using (ThreadScopedLifestyle.BeginScope(container))
             {
                 var registryService = container.GetInstance<IRegistryService>();
-                registryService.Register(new RPC.Common.RpcService { Name="房源服务", Host = "127.0.0.1", Port = 2012 });
+                registryService.Register(new RPC.Common.RpcService { Name="UserService", Host = "127.0.0.1", Port = 2012 });
                 server.RegisterService<IUserService>(container.GetInstance<IUserService>());
 
                

@@ -16,8 +16,10 @@ namespace RPC.Common.Discovery
         {
             using (var consul = BuildConsul())
             {
-                var services=consul.Agent.Services().ConfigureAwait(false).GetAwaiter().GetResult();
-                var discoveredServices = services.Response.Values.Where(t=>t.Service.Equals(serviceName));
+                var healthServices = consul.Health.Service(serviceName,"",true).ConfigureAwait(false).GetAwaiter().GetResult();//获取健康的服务
+                //var services=consul.Agent.Services().ConfigureAwait(false).GetAwaiter().GetResult();
+                //var discoveredServices = services.Response.Values.Where(t=>t.Service.Equals(serviceName));
+                var discoveredServices = healthServices.Response.Select(t => t.Service).ToList();
                 return discoveredServices?.Select(t => new RpcService { Name = t.Service, Host = t.Address, Port = t.Port }).ToList();
             };
         }
