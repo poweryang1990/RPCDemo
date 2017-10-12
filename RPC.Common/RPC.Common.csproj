@@ -46,6 +46,7 @@
     <Compile Include="BaseConsulService.cs" />
     <Compile Include="Discovery\ConsulDiscoveryService.cs" />
     <Compile Include="Discovery\IDiscoveryService.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registry\ConsulRegistryService.cs" />
     <Compile Include="Registry\IRegistryService.cs" />

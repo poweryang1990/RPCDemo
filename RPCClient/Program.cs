@@ -38,16 +38,7 @@ namespace RPCClient
             //}
             #endregion
             #region Hprose
-            using (ThreadScopedLifestyle.BeginScope(container))
-            {
-                var consulDiscoveryService = new ConsulDiscoveryService(new ServiceRegistryAddress { RegistryHost = "127.0.0.1", RegistryPort = 8500 });
-                var urls = consulDiscoveryService.GetRpcService("UserService");
-                if (urls != null && urls.Any())
-                {
-                    string url = $"http://{urls[0].Host}:{urls[0].Port}/";
-                    container.Register<IUserService>(() => new HproseHttpClientPxoxy(url).UseService<IUserService>(), Lifestyle.Scoped);
-                }
-            }
+            container.Register<IUserService>(() => new HproseHttpClientPxoxy("UserService").UseService<IUserService>(), Lifestyle.Scoped);
             #endregion
 
             // Optionally verify the container.
@@ -64,10 +55,17 @@ namespace RPCClient
             {
                 using (ThreadScopedLifestyle.BeginScope(container))
                 {
-                    IUserService userService = container.GetInstance<IUserService>();
-                    var result = userService.SayHello(new User { name = "Power Yang", age = 19 });
-                    var users = userService.GetAllUsers();
-                    Console.WriteLine(result);
+                    try
+                    {
+                        IUserService userService = container.GetInstance<IUserService>();
+                        var result = userService.SayHello(new User { name = "Power Yang", age = 19 });
+                        var users = userService.GetAllUsers();
+                        Console.WriteLine(result);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
                 }
                 Console.ReadKey();
             }
@@ -106,17 +104,18 @@ namespace RPCClient
 
     public  class HproseHttpClientPxoxy
     {
-        private  HproseHttpClient _client;
-
-        public HproseHttpClientPxoxy(HproseHttpClient client)
+        private string _serviceName;
+        public HproseHttpClientPxoxy(string serviceName)
         {
-            _client = client;
-        }
-        public HproseHttpClientPxoxy(string url)
-        {
-            _client = new HproseHttpClient(url);
+            _serviceName = serviceName;
         }
 
-        public T UseService<T>() => _client.UseService<T>();
+        public T UseService<T>()
+        {
+            var consulDiscoveryService = new ConsulDiscoveryService(new ServiceRegistryAddress { RegistryHost = "127.0.0.1", RegistryPort = 8500 });
+            var url = consulDiscoveryService.GetRpcService(_serviceName);
+            var client = new HproseHttpClient(url);
+            return client.UseService<T>();
+        }
     }
 }

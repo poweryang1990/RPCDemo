@@ -20,5 +20,6 @@ namespace RPC.Common
         /// 服务端口
         /// </summary>
         public int Port { get; set; }
+        
     }
 }

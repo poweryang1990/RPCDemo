@@ -38,6 +38,7 @@ namespace RPCServer.Hprose
             {
                 var registryService = container.GetInstance<IRegistryService>();
                 registryService.Register(new RPC.Common.RpcService { Name="UserService", Host = "127.0.0.1", Port = 2012 });
+                registryService.Register(new RPC.Common.RpcService { Name = Global.TraefikServiceName, Host = "127.0.0.1", Port = 82 });//注册一个Traefik服务
                 server.RegisterService<IUserService>(container.GetInstance<IUserService>());
 
                

@@ -33,7 +33,7 @@ namespace RPC.Common.Registry
                     Port = rpcService.Port,
                     Check= new AgentServiceCheck
                     {
-                         HTTP=$"http://{rpcService.Host}:{rpcService.Port}",
+                         TCP=$"{rpcService.Host}:{rpcService.Port}",
                          Interval=TimeSpan.FromSeconds(5),
                          Timeout= TimeSpan.FromSeconds(2)
                     }

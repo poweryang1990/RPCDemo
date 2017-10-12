@@ -16,6 +16,6 @@ namespace RPC.Common.Discovery
         /// </summary>
         /// <param name="serviceName"></param>
         /// <returns></returns>
-        List<RpcService> GetRpcService(string  serviceName);
+        string GetRpcService(string  serviceName);
     }
 }
