@@ -23,7 +23,7 @@
 # Default: ["http"]
 #
 # defaultEntryPoints = ["http", "https"]
-
+defaultEntryPoints=["http"]
 # Entrypoints definition
 #
 # Optional
